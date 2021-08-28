@@ -1,0 +1,24 @@
+<script src="angular.js"></script>
+<script>
+    var myModule = angular.module("myModule", []);
+
+    myModule.controller("MyController", function($scope){
+       $scope.showData = function(){
+           $scope.nameValue = $scope.name;
+           $scope.telValue = $scope.tel;
+       };
+    });
+</script>
+<div ng-app="myModule">
+    <div ng-controller = "MyController">
+        <form>
+            <div>Name = <input ng-model="name"/></div>
+            <div>Tel = <input ng-model="tel"/></div>
+            <button ng-click="showData()">
+                Click for Show Data
+            </button>
+        </form>
+        <div>Name = {{ nameValue }}</div>
+        <div>Tel = {{ telValue }}</div>
+    </div>
+</div>

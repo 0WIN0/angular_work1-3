@@ -1,0 +1,16 @@
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('app',[]);
+    app.controller('IndexController', function($scope){
+        $scope.submitFunction = () =>{
+            console.log('submit called')
+        }
+    })
+</script>
+<div ng-app="app">
+    <div ng-controller="IndexController">
+        <form ng-submit="submitFunction()">
+            <input />
+        </form>
+    </div>
+</div>

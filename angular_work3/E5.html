@@ -1,0 +1,26 @@
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('app',[]);
+    app.controller('MyController', function ($scope,$http){
+        $scope.books = [{
+            id: 100,
+            name: 'JAVA'
+        }, {
+            id: 200,
+            name: 'PHP'
+        }, {
+            id:300,
+            name: 'AngularJS'
+        }]
+        $scope.book_id = $scope.books[0].id;
+    });
+</script>
+<div ng-app="app">
+    <div ng-controller="MyController">
+        <select ng-model="book_id">
+          <option ng-repeat="item in books" value="{{ item.id }}">
+            {{ item.name }}
+          </option>
+        </select>
+    </div>
+</div>

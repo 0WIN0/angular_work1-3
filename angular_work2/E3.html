@@ -1,0 +1,25 @@
+<script src="angular.js"></script>
+<script>
+    var myModule = angular.module("myModule", []);
+    myModule.controller("MyController", function($scope) {
+        $scope.products = [
+        { name: "jPOS", price: 3000 },
+        { name: "iService", price: 2500 },
+        { name: "jRoom", price: 700 },
+        { name: "iCommerce", price: 900 }
+        ];
+        $scope.showData = function() {
+            angular.forEach($scope.products, item => {
+                console.log(item);
+            });
+        };
+    });
+</script>
+<div ng-app="myModule">
+    <div ng-controller = "MyController">
+        <button ng-click="showData()">
+            Click Here for Show data
+        </button>
+    </div>
+</div>
+

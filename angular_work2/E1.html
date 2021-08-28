@@ -1,0 +1,14 @@
+<script src="angular.js"></script>
+<script>
+    var myModule = angular.module("myModule", []);
+
+    myModule.controller("MyController", function($scope) {})
+</script>
+<div ng-app="myModule">
+    <div ng-controller = "MyController">
+        <form>
+            <div>Name = <input ng-model="customer.name"/></div>
+        </form>
+        <div>Name = {{ customer.name }}</div>
+    </div>
+</div>

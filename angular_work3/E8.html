@@ -1,0 +1,24 @@
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('app',[]);
+    app.controller('IndexController', function ($scope){
+        $scope.books = [
+            {id: 100, name: 'JAVA'},
+            {id: 200, name: 'Angular'},
+            {id: 300, name: 'PHP'},
+    ]
+    $scope.myFunction = () =>{
+        console.log('function called')
+    }
+    })
+</script>
+<div ng-app="app">
+    <div ng-controller="IndexController">
+        <select ng-change="myFunction()" ng-model="input">
+          <option ng-repeat="item in books" value="{{ item.id }}">
+            {{ item.name }}
+          </option>
+        </select>
+        {{ input }}
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<script src="angular.js"></script>
+<script>
+    var myModule = angular.module("myModule", []);
+
+    myModule.controller("MyController", function($scope) {
+        $scope.showData = function(){
+            console.log($scope.customer.name);
+        };
+    });
+</script>
+<div ng-app="myModule">
+    <div ng-controller = "MyController">
+        <div>Before Form: {{ customer.name }}</div>
+        <form>
+            <div>Name = <input ng-model="customer.name"/></div>
+            <button ng-click="showData()">
+                Click Here
+            </button>
+        </form>
+        <div>After Form: {{ customer.name }}</div>
+    </div>
+</div>

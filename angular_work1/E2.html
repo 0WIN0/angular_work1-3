@@ -1,0 +1,16 @@
+<script src="angular.js"></script>
+<script>
+    var Mymodule = angular.module("MyModule", []);
+    Mymodule.controller("MyController", function($scope){
+        $scope.x = 10;
+        $scope.y = 20;
+        $scope.z = 30;
+    });
+</script>
+<div ng-app="MyModule">
+    <div ng-controller="MyController">
+        <div>x = {{ x }}</div>
+        <div>y = {{ y }}</div>
+        <div>z = {{ z }}</div>
+    </div>
+</div>

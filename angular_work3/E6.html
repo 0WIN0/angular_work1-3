@@ -1,0 +1,14 @@
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('app',[]);
+    app.controller('IndexController', function($scope){
+        $scope.blurFunction = () =>{
+            console.log('blur called')
+        }
+    })
+</script>
+<div ng-app="app">
+    <div ng-controller="IndexController">
+        <input ng-blur="blurFunction()"/>
+    </div>
+</div>

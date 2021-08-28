@@ -1,0 +1,12 @@
+<script src="angular.js"></script>
+<script>
+    var Mymodule = angular.module("MyModule", []);
+    Mymodule.controller("MyController", function($scope){
+        $scope.varName = "Krittapas";
+    });
+</script>
+<div ng-app="MyModule">
+    <div ng-controller="MyController">
+        <div>{{ varName }}</div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<script src="angular.js"></script>
+<script>
+    var myModule = angular.module("myModule", []);
+    myModule.controller("MyController", function($scope){
+        $scope.ShowMessage = function(){
+            $scope.message = "Krittapas";
+        };
+    });
+</script>
+<div ng-app="myModule">
+    <div ng-controller = "MyController">
+        <button ng-click="ShowMessage()">
+            Click Here for Show message
+        </button>
+        <div>{{ message }}</div>
+    </div>
+</div>

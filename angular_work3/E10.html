@@ -1,0 +1,19 @@
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('app',[]);
+    app.controller('IndexController', function ($scope){
+        $scope.books = [
+            {id: 100, name: 'JAVA'},
+            {id: 200, name: 'Angular'},
+            {id: 300, name: 'PHP'},
+    ]
+    })
+</script>
+<div ng-app="app">
+    <div ng-controller="IndexController">
+        <input ng-model="search.name" />
+        <div ng-repeat="item in books | orderBy : id : true">
+            {{ item.id }} = {{ item.name }}
+        </div>
+    </div>
+</div>

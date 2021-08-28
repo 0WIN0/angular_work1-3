@@ -1,0 +1,27 @@
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('app',[]);
+    app.controller('MyController', function ($scope,$http){
+        var params = {
+                id: 100,
+                name: 'test'
+        }
+        $scope.sendGet = () => {
+            $http.get('myrul.php',params).then(res =>{
+                console.log(res.data);
+            })
+        }
+        $scope.sendPost = () => {
+            $http.post('myurl.php',params).then(res =>{
+                console.log(res.data)
+            })
+        }
+
+    })
+</script>
+<div ng-app="app">
+    <div ng-controller="MyController">
+        <button ng-click="sendGet()">Send Get</button>
+        <button ng-click="sendPost()">Send post</button>
+    </div>
+</div>

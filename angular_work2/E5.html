@@ -1,0 +1,27 @@
+<script src="angular.js"></script>
+<script src="angular-route.js"></script>
+<script>
+    var app = angular.module('app',['ngRoute']);
+    app.config(function ($routeProvider) {
+        $routeProvider
+        .when("/",{
+            templateUrl: "main.html"
+        })
+        .when("/red",{
+            templateUrl: "red.html"
+        })
+        .when("/green",{
+            templateUrl: "green.html"
+        })
+        .when("/blue",{
+            templateUrl: "blue.html"
+        });
+    });
+</script>
+<div ng-app="app">
+    <a href="#/!">Main</a>
+    <a href="#!red">Red</a>
+    <a href="#!green">Green</a>
+    <a href="#!blue">Blue</a>
+    <div ng-view></div>
+</div>

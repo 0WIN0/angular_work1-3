@@ -1,0 +1,22 @@
+<script src="angular.js"></script>
+<script>
+    var myModule = angular.module("myModule", []);
+    myModule.controller("MyController", function($scope){
+       $scope.customers = [
+           {code: 1001, name: "Tavon" },
+           {code: 1002, name: "Mali" },
+           {code: 1003, name: "Thilada" },
+           {code: 1004, name: "Tony" }
+       ];
+       $scope.x = 10;
+    });
+</script>
+<div ng-app="myModule">
+    <div ng-controller = "MyController">
+        <div ng-if="x == 10">x is 10</div>
+        <div ng-repeat = "item in customers">
+            <div mg-if="item.code != 1002"></div>
+            {{ item.code }} = {{ item.name }}
+        </div>
+    </div>
+</div>
